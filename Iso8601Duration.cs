@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text.RegularExpressions;
 
 namespace Iso8601
@@ -32,7 +32,8 @@ namespace Iso8601
             foreach (var group in groups)
             {
                 var elements = Regex.Matches(group.ToString(), Constants.ELEMENT_PATTERN);
-                if (elements[0].Value == Constants.TAG_PERIOD) {
+                if (elements[0].Value == Constants.TAG_PERIOD)
+                {
                     for (int i = 1; i < elements.Count; i++)
                     {
                         var intVal = 0;
@@ -46,7 +47,8 @@ namespace Iso8601
                         }
                     }
                 }
-                if (elements[0].Value == Constants.TAG_TIME) {
+                if (elements[0].Value == Constants.TAG_TIME)
+                {
                     for (int i = 1; i < elements.Count; i++)
                     {
                         var intVal = 0;
@@ -143,7 +145,7 @@ namespace Iso8601
         /// <returns>Whether the left interval is longer or equal to the right one.</returns>
         public static bool operator >=(Iso8601Duration left, Iso8601Duration right)
         {
-            return _ConvertToSeconds(left) >= _ConvertToSeconds(right);
+            return !(left < right);
         }
 
         /// <summary>
@@ -154,7 +156,7 @@ namespace Iso8601
         /// <returns>Whether the left interval is shorter or equal to the right one.</returns>
         public static bool operator <=(Iso8601Duration left, Iso8601Duration right)
         {
-            return _ConvertToSeconds(left) <= _ConvertToSeconds(right);
+            return !(left > right);
         }
         #endregion
 
