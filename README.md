@@ -4,7 +4,7 @@ Iso8601-helper. Adds extensions for DateTime to work with time periods represent
 See How2Use.cs
 
 Briefly:
-var nextBirthday = DateTime.Now.Add(new Iso8601Duration("P1Y"));
+`var nextBirthday = DateTime.Now.Add(new Iso8601Duration("P1Y"));`
 
 Use:
 • Constants.cs
