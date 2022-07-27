@@ -12,6 +12,7 @@ Use:
 - Extensions.cs
 - Iso8601Duration.cs
 
+# TLDR
 The reason for creating this helper is that the only one native .NET-converter I know for such strings is XmlConvert. But it counts time intervals in an errative way because of a month consisting of exactly 30 days and a year consisting of exactly 365 days. It leads to a misconception like ```DateTime.Parse("2020-01-01").Add(XmlConvert.ToTimeSpan("P1M")); // returns 2020-01-31``` and ```DateTime.Parse("2020-01-01").Add(XmlConvert.ToTimeSpan("P2M")); // returns 2020-03-02```.
 
 I also didn't implement converting ISO 8601 into a TimeSpan because:
