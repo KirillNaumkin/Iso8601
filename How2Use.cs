@@ -9,16 +9,16 @@ namespace ConsoleTestApp
         {
             string[] input = {
                 "P14Y2M8D",
-                "P14Y2M8DT6HM02S",
-                "P-14Y2M8DT-6HM02S",   // iso8601 supports negative values of time portions → works fine
-                "PT20M",
+                "P14Y2M8DT6HM02S",     // with leading zeros (02S) → works fine
+                "P-14Y2M8DT-6HM02S",   // iso8601 standard itself supports negative values of time portions → works fine
+                "PT20M",               // without date group → works fine
                 "P14D",
                 "P2M8DT6H15M02S",
                 "P8DT16S",
-                "P8DT0S",
-                "P8DTS",
+                "P8DT0S",               // with zero-value for seconds → works fine
+                "P8DTS",                // without empty-value for seconds → works fine
                 "P14Y2M8DT6HM02S",
-                "P2M14Y8DT6HM02S",      // months in front of years → doesn't matter
+                "P2M14Y8DT6HM02S",      // months in front of years → works fine
                 "P2M8DT6HM02S14Y",      // years in an inappropriate group → years are ignored
                 "P14Y8DT6H2M6M02S"      // months in an inappropriate group and represent minutes → minutes are summed (2+6)
             };
