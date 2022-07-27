@@ -75,7 +75,7 @@ namespace Iso8601
                 Days = timeSpan.Days,
                 Hours = timeSpan.Hours,
                 Minutes = timeSpan.Minutes,
-                Seconds = (int)timeSpan.TotalSeconds
+                Seconds = timeSpan.Seconds
             };
         }
 
