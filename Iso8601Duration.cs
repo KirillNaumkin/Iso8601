@@ -88,10 +88,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether intervals are equal or not.</returns>
-        public static bool operator ==(Iso8601Duration left, Iso8601Duration right)
-        {
-            return _ConvertToSeconds(left) == _ConvertToSeconds(right);
-        }
+        public static bool operator ==(Iso8601Duration left, Iso8601Duration right) => _ConvertToSeconds(left) == _ConvertToSeconds(right);
 
         /// <summary>
         /// Compares 2 time intervals represented by instances of Iso8601Duration.
@@ -99,10 +96,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether intervals are NOT equal.</returns>
-        public static bool operator !=(Iso8601Duration left, Iso8601Duration right)
-        {
-            return !(left == right);
-        }
+        public static bool operator !=(Iso8601Duration left, Iso8601Duration right) => !(left == right);
 
         /// <summary>
         /// Compares this time interval to another represented by an instance of Iso8601Duration.
@@ -110,10 +104,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether intervals are equal.</returns>
-        public bool Equals(Iso8601Duration isoDuration)
-        {
-            return this == isoDuration;
-        }
+        public bool Equals(Iso8601Duration isoDuration) => this == isoDuration;
 
         /// <summary>
         /// Compares 2 time intervals represented by instances of Iso8601Duration.
@@ -121,10 +112,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether the left interval is longer than the right one.</returns>
-        public static bool operator >(Iso8601Duration left, Iso8601Duration right)
-        {
-            return _ConvertToSeconds(left) > _ConvertToSeconds(right);
-        }
+        public static bool operator >(Iso8601Duration left, Iso8601Duration right) => _ConvertToSeconds(left) > _ConvertToSeconds(right);
 
         /// <summary>
         /// Compares 2 time intervals represented by instances of Iso8601Duration.
@@ -132,10 +120,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether the left interval is shorter than the right one.</returns>
-        public static bool operator <(Iso8601Duration left, Iso8601Duration right)
-        {
-            return _ConvertToSeconds(left) < _ConvertToSeconds(right);
-        }
+        public static bool operator <(Iso8601Duration left, Iso8601Duration right) => _ConvertToSeconds(left) < _ConvertToSeconds(right);
 
         /// <summary>
         /// Compares 2 time intervals represented by instances of Iso8601Duration.
@@ -143,10 +128,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether the left interval is longer or equal to the right one.</returns>
-        public static bool operator >=(Iso8601Duration left, Iso8601Duration right)
-        {
-            return !(left < right);
-        }
+        public static bool operator >=(Iso8601Duration left, Iso8601Duration right) => !(left < right);
 
         /// <summary>
         /// Compares 2 time intervals represented by instances of Iso8601Duration.
@@ -154,10 +136,7 @@ namespace Iso8601
         /// <param name="left"></param>
         /// <param name="right"></param>
         /// <returns>Whether the left interval is shorter or equal to the right one.</returns>
-        public static bool operator <=(Iso8601Duration left, Iso8601Duration right)
-        {
-            return !(left > right);
-        }
+        public static bool operator <=(Iso8601Duration left, Iso8601Duration right) => !(left > right);
         #endregion
 
         private void _CheckInput(string iso8601Duration)
