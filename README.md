@@ -7,6 +7,11 @@ Briefly:
 `var nextBirthday = DateTime.Now.Add(new Iso8601Duration("P1Y"));`
 
 Use:
-• Constants.cs
-• Extensions.cs
-• Iso8601Duration.cs
+
+- Constants.cs
+- Extensions.cs
+- Iso8601Duration.cs
+
+The reasons of creating this helper are:
+
+- 
