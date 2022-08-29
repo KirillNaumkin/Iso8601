@@ -24,3 +24,4 @@ I also didn't implement converting ISO 8601 into a TimeSpan because:
 - "P1M" is not `TimeSpan.Days = 30`
 
 ... — the truth of these expressions depends on a specific year and month, so you cannot just convert these ISO 8601 intervals into a TimeSpan for adding to a custom DateTime, because specific initial DateTime leads to a specific resulting DateTime for the same ISO 8601 period value.
+Even 1M is not always 60S — see [Leap Second](https://en.wikipedia.org/wiki/Leap_second).
