@@ -21,8 +21,7 @@ The reason for creating this helper is that the only one native .NET-converter I
 I also didn't implement converting ISO 8601 into a TimeSpan because:
 
 - "P1Y" is not `TimeSpan.Days = 365` and
-- "P1M" is not `TimeSpan.Days = 30`
+- "P1M" is not `TimeSpan.Days = 30` and even
+- "PT1M" is not `TimeSpan.Seconds = 60` (see [Leap Second](https://en.wikipedia.org/wiki/Leap_second))
 
 ... — the truth of these expressions depends on a specific year and month, so you cannot just convert these ISO 8601 intervals into a TimeSpan for adding to a custom DateTime, because specific initial DateTime leads to a specific resulting DateTime for the same ISO 8601 period value.
-
-Even P1M (1 minute) is not always P60S (60 seconds) — see [Leap Second](https://en.wikipedia.org/wiki/Leap_second).
